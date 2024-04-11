@@ -21,7 +21,7 @@ useEffect(() => {
 }, []);
 
 async function getTransactions() {
-  const url = "http://localhost:7770/api"+"/transactions";
+  const url = "https://expense-tracker-t81i.onrender.com"+"/transactions";
   const response = await fetch(url);
   return await response.json();
 }
@@ -29,7 +29,7 @@ async function getTransactions() {
 const addNewTransaction = async (e) => {
   e.preventDefault();
   //const url = process.env.REACT_APP_API_URL;
-  const url = "http://localhost:7770/api"+"/transaction"
+  const url = "https://expense-tracker-t81i.onrender.com"+"/transaction"
   const price = name.split(' ')[0]
   const timeDate = datetime.split('.')[0] 
   try {
