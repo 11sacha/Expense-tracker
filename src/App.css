@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #17181f;
+    color: #ddd;
+}
+
+h1 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 1rem;
+    
+}
+
+div a:hover {
+    color: rgb(255, 234, 118);
+    text-shadow: 0 0 4px gold;
+}
+
+main {
+    max-width: 400px;
+    margin: 25px auto;
+    font-size: medium;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+h2 span {
+    font-size: 0.8rem;
+    vertical-align: top;
+    margin-top: 7px;
+    margin-left: 2px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+form div.basic {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+form button {
+    margin-top: 11px;
+    border-radius: 5px;
+    width: 100%;
+    border: 0;
+    padding: 6px;
+    color: white;
+    background-color: rgb(23, 156, 90);
+}
+
+form button.add {
+    font-size: 1rem;
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+form button.add:hover {
+    transform: translateY(-2px);
+}
+
+form button.add:active {
+    transform: translateY(1px);
+}
+
+div.transactions {
+    margin-top: 15px;
+}
+
+div.transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #888;
+    margin-top: 5px;
+}
+
+div.transaction:first-child {
+    border-top: none;
+}
+
+div.transaction div.name {
+    font-size: 1.2rem;
+}
+
+div.transaction div.description {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+div.right {
+    text-align: right;
+}
+
+div.price {
+    font-size: 1.2rem;
+}
+
+div.price.green {
+    color: #1c1;
+}
+
+div.price.red {
+    color: #c11;
+}
+
+div.transaction div.datetime {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+
+
