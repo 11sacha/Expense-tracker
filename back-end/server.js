@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 app.get('/api/test', (req, res) => {
     res.json({body: 'tes7'})
 })
@@ -27,7 +28,12 @@ app.get('/api/transactions', async (req, res) => {
     res.json(transactions)
 })
 
-app.listen(port, () => {
+app.listen(port, async () => {
+    await mongoose.connect(process.env.MONGO_URL).then(
+        console.log('Server connected to database')
+    );
     console.log(`Server just started on port: ${port}`)
 });
+
+
 

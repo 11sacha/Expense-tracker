@@ -8,20 +8,15 @@ const [description, setDescription] = useState('');
 const [datetime, setDatetime] = useState('')
 const [transactions, setTransactions] = useState('')
 
-// useEffect(() => {
-//   getTransactions().then(setTransactions)
-// }, []);
-
 useEffect(() => {
   getTransactions().then(transactions => {
-    // Sort transactions by datetime in descending order
     const sortedTransactions = transactions.slice().sort((a, b) => new Date(b.datetime) - new Date(a.datetime));
     setTransactions(sortedTransactions);
   });
 }, []);
 
 async function getTransactions() {
-  const url = "https://expense-tracker-t81i.onrender.com"+"/transactions";
+  const url = "https://localhost:5174"+"/transactions";
   const response = await fetch(url);
   return await response.json();
 }
@@ -29,7 +24,7 @@ async function getTransactions() {
 const addNewTransaction = async (e) => {
   e.preventDefault();
   //const url = process.env.REACT_APP_API_URL;
-  const url = "https://expense-tracker-t81i.onrender.com"+"/transaction"
+  const url = "https://localhost:5174"+"/transaction"
   const price = name.split(' ')[0]
   const timeDate = datetime.split('.')[0] 
   try {
@@ -79,17 +74,20 @@ balance = balance.split('.')[0]
       <form onSubmit={addNewTransaction}>
         <div className='basic'>
           <input
+            id='name'
             value={name}
             onChange={e => setName(e.target.value)}
             type="text" 
             placeholder='+150 Kindle'/>
-          <input 
+          <input
+            id='date' 
             value={datetime} 
             onChange={e => setDatetime(e.target.value)} 
             type="datetime-local"/>
         </div>
         <div className='description'>
-          <input 
+          <input
+            id='desc' 
             value={description} 
             onChange={e => setDescription(e.target.value)} 
             type="text" placeholder='Description' />

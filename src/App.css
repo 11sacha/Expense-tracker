@@ -57,10 +57,23 @@ form {
 }
 
 form input {
-    width: 100%;
+    /* width: 100%; */
     padding: 4px 10px;
     border-radius: 5px;
 }
+
+form input#name {
+    width: 40%;
+}
+
+form input#date {
+    width: 60%;
+}
+
+form input#desc {
+    width: 100%;
+}
+
 
 form div.basic {
     display: flex;
