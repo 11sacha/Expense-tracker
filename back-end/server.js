@@ -5,14 +5,17 @@ require('dotenv').config();
 const Transaction = require('./models/transaction.js')
 const mongoose = require("mongoose")
 const app = express();
+const path = require('path');
 
 //Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../dist')))
+
 
 
 app.get('/api/test', (req, res) => {
-    res.json({body: 'tes7'})
+    res.json({body: 'test'})
 })
 
 app.post('/api/transaction', async (req, res) => {
@@ -35,5 +38,8 @@ app.listen(port, async () => {
     console.log(`Server just started on port: ${port}`)
 });
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+})
 
 
