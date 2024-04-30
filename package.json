@@ -7,7 +7,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "nodemon back-end/server.js"
+    "start": "npx nodemon back-end/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
